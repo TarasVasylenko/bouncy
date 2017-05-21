@@ -1,0 +1,244 @@
+@import "normalize";
+@import "variables";
+@import "mixin";
+@import "grid";
+@import "https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css";
+@import "https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css";
+
+@font-face {
+	font-family: 'icomoon';
+	src:  url('../fonts/icomoon.eot?rp63fl');
+	src:  url('../fonts/icomoon.eot?rp63fl#iefix') format('embedded-opentype'),
+	url('../fonts/icomoon.ttf?rp63fl') format('truetype'),
+	url('../fonts/icomoon.woff?rp63fl') format('woff'),
+	url('../fonts/icomoon.svg?rp63fl#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// .icon-keyboard_arrow_down:before {
+//   content: "\e900";
+// }
+// .icon-facebook:before {
+//   content: "\ea90";
+// }
+// .icon-instagram:before {
+//   content: "\ea92";
+// }
+// .icon-twitter:before {
+//   content: "\ea96";
+// }
+// .icon-vimeo:before {
+//   content: "\eaa0";
+// }
+// .icon-linkedin2:before {
+//   content: "\eaca";
+// }
+
+
+*, *:after, *:before {
+	@include box-sizing;
+}
+
+body{
+	font-family: $main-font-1;
+	color: $font-color-2;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $font-height; 
+}
+
+
+
+h1{
+	margin: 0 auto 30px auto;
+	line-height: 1;
+	font-size: 35px;
+	font-weight: 300;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+
+}
+
+h2{
+	margin: 0 auto;
+	padding: 100px 0 40px 0;
+	line-height: 1;
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.slide-1{
+	min-height: 100vh;
+	height: auto;
+	background: $color-bg url("../img/bg-slide-1.png") no-repeat center center; 
+	background-size: cover;
+	font-size: 0;
+}
+
+header{
+	padding: 45px 0;
+}
+
+.logo{
+	display: inline-block;
+	vertical-align: middle;
+	width: 25%;
+}
+
+.menu{
+	display: inline-block;
+	width: 75%;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.menu__item{
+	display: inline-block;
+	a{
+		font-size: 16px;
+		line-height: 1;
+		text-decoration: none;
+		color: $font-color-1;
+		padding: 10px 20px;
+		border: 1px solid transparent;
+		border-radius: 20px;
+		&:hover{
+			@include a-hover($font-color-1);
+		}
+	}
+}
+
+.menu__item.last{
+	margin: 0 -15px 0 0;
+}
+
+.slide-1__cnt{
+	width: 45%;
+	margin: 180px auto 0 auto;
+	font-size: $font-size;
+	color: $font-color-1;
+	text-align: center;
+	p{
+		margin: 0;
+		font-size: 16px;
+	}
+}
+
+.icon-keyboard_arrow_down:before {
+	position: absolute;
+	bottom: 75px;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	content: "\e900";
+	font-size: 20px;
+	color: $font-color-1;
+	padding: 15px;
+	border: 1px solid $font-color-1;
+	border-radius: 50px;
+}
+
+.next-slide{
+	background: #fff;
+}
+
+
+.slide-2{
+	height: auto;
+	background: $color-bg; 
+	text-align: center;
+	padding-bottom: 100px;
+
+	p{
+		width: 40%;
+		margin: 0 auto;
+		font-size: 16px;
+
+	}
+	.button-group{
+		margin: 75px 0;
+	}
+
+	button{
+		position: relative;
+		display: inline-block;
+		outline: none;
+		border: none;
+		background: none;
+		font-size: 16px;
+		&:after{
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			content: "";
+			width: 30px;
+			display: inline-block;
+			height: 2px;
+			background: transparent;
+			@include transition(all, 0.5s, ease);
+		}
+		&:hover:after{
+			background: #19bd9a;
+		}
+	}
+	.grid-item{
+		padding: 0 5px;
+	}
+}
+
+.slide-3{
+	height: auto;
+	text-align: center;
+	padding-bottom: 100px;
+	text-align: center;
+	p{
+		width: 40%;
+		margin: 0 auto;
+		font-size: 16px;
+	}
+}
+
+.slider-cnt{
+	text-align: right;
+	
+	h3{
+		font-family: $main-font-2;
+		font-size: 20px;
+		margin: 10px 0;
+		line-height: 1;
+	}
+	h4{
+		font-family: $main-font-1;
+		margin: 0 0 30px 0;
+		line-height: 1;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+
+	p.slider-cnt-p{
+		width: 100%;
+	}
+}
+
+.slick-dots li.slick-active button:before{
+	color: $decor-color;
+}
