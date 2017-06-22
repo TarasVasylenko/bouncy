@@ -515,6 +515,7 @@ header {
   border-radius: 50px; }
 
 .next-slide {
+  display: inline-block;
   background: #fff; }
 
 .slide-2 {

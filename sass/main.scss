@@ -157,7 +157,11 @@ header{
 }
 
 .next-slide{
+	display: inline-block;
 	background: #fff;
+	&:hover {
+
+	}
 }
 
 
